@@ -7,7 +7,9 @@ function App() {
   const wsref = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8081");
+    // const ws = new WebSocket("ws://localhost:8081");
+    const ws = new WebSocket("wss://your-deployed-websocket-server.com");
+
 
     ws.onmessage = (e) => {
       setMessages((m) => [...m, e.data]); 
